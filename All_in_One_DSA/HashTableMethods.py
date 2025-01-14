@@ -1,5 +1,5 @@
 from collections import defaultdict
-
+from collections import OrderedDict
 
 # creating
 my_dict={1:0,2:1,3:2}
@@ -93,6 +93,19 @@ for key,val in my_dict.items():
 nested_dict = {"a": {"b": 1}, "c": {"d": 2}}
 flatten =[key for outer,inner_dict in nested_dict.items() for key,val in inner_dict.items() ]
 print(flatten)
+
+"""Key Features of OrderedDict
+	1.	Maintains Insertion Order: Items are returned in the order in which they were added.
+	2.	Reordering: Methods like move_to_end() allow reordering of elements.
+	3.	Memory Efficiency: Slightly more memory usage compared to a regular dictionary.
+	4.	Equality Comparison: Takes into account the order of keys."""
+#move_to_end()
+ordered_dict = OrderedDict([('a', 1), ('b', 2), ('c', 3)])
+ordered_dict.move_to_end('b')
+print(ordered_dict)
+ordered_dict.move_to_end('b',last=False)
+print(ordered_dict)
+
 
 
 
